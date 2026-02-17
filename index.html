@@ -6,135 +6,160 @@
 <title>VFX Artist</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #e9e9e9;
-  line-height: 1.6;
+
+/* ================= GLOBAL ================= */
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#e9e9e9;
+  line-height:1.6;
 }
 
-/* ================= HERO ================= */
-.section {
-  padding: 100px 80px;
+/* Shared section spacing */
+.section{
+  padding:100px 80px;
 }
 
-.tagline {
-  font-size: 18px;
-  color: rgba(0,0,0,0.7);
+@media(max-width:768px){
+  .section{
+    padding:60px 25px;
+  }
 }
 
-.heading {
-  font-size: 80px;
-  font-weight: 800;
-  margin: 0;
+/* ================= SECTION 1 — INTRO ================= */
+
+.tagline{
+  font-size:18px;
+  color:rgba(0,0,0,0.7);
 }
 
-.description {
-  margin-top: 30px;
-  font-size: 20px;
-  max-width: 600px;
-  color: rgba(0,0,0,0.7);
+.heading{
+  font-size:80px;
+  font-weight:800;
+  margin:0;
 }
 
-/* ================= FULL VIDEO HERO ================= */
-
-.video-section {
-  width: 100%;
-  background: #e9e9e9; /* same as body so sections separate */
+.description{
+  margin-top:30px;
+  font-size:20px;
+  max-width:600px;
+  color:rgba(0,0,0,0.7);
 }
 
-.video-wrapper {
-  position: relative;
-  width: calc(100% - 80px); /* side padding */
-  margin: 60px auto;        /* top & bottom spacing */
-  height: 90vh;
-  max-height: 900px;
-  overflow: hidden;
-  border-radius: 16px;
+@media(max-width:768px){
+  .heading{
+    font-size:48px;
+  }
 }
 
+/* ================= SECTION 2 — VIDEO ================= */
 
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 56.25vw;           /* 16:9 ratio */
-  min-height: 100%;
-  min-width: 177.77vh;       /* 16:9 ratio */
-  transform: translate(-50%, -50%);
-  border: 0;
+.video-section{
+  background:#e9e9e9;
 }
 
-/* ================= SOFTWARE ================= */
-
-.software {
-  padding: 120px 80px;
-  background: white;
+.video-wrapper{
+  position:relative;
+  width:calc(100% - 80px);
+  margin:60px auto;
+  height:85vh;
+  max-height:850px;
+  border-radius:18px;
+  overflow:hidden;
+  background:black;
 }
 
-.software-header {
-  text-align: right;
-  margin-bottom: 70px;
+/* 16:9 cinematic scaling */
+.video-wrapper iframe{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100vw;
+  height:56.25vw;
+  min-height:100%;
+  min-width:177.77vh;
+  transform:translate(-50%,-50%);
+  border:0;
 }
 
-.software-header h2 {
-  font-size: 70px;
+@media(max-width:768px){
+  .video-wrapper{
+    width:calc(100% - 30px);
+    height:60vh;
+  }
 }
 
-.software-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-  gap: 60px;
-  text-align: center;
+/* ================= SECTION 3 — SOFTWARES ================= */
+
+.software{
+  background:white;
 }
 
-.logo-box {
-  width: 90px;
-  height: 90px;
-  margin: auto;
+.software-header{
+  text-align:right;
+  margin-bottom:70px;
 }
 
-.logo-box img {
-  width: 100%;
-  object-fit: contain;
+.software-header h2{
+  font-size:70px;
+  margin:10px 0 0;
 }
 
-/* ================= MOBILE ================= */
-
-@media (max-width:768px){
-
-.heading {
-  font-size: 48px;
+.software-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:60px;
+  text-align:center;
 }
 
-.section {
-  padding: 60px 25px;
+.software-item{
+  transition:.3s;
 }
 
-.video-wrapper {
-  height: 60vh;
+.software-item:hover{
+  transform:scale(1.08);
 }
 
+.logo-box{
+  width:90px;
+  height:90px;
+  margin:auto;
 }
+
+.logo-box img{
+  width:100%;
+  object-fit:contain;
+}
+
+.software-name{
+  margin-top:12px;
+  font-weight:500;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- HERO TEXT -->
+<!-- ================= SECTION 1 — INTRO ================= -->
+
 <section class="section">
   <p class="tagline">ROTO | ROTO PAINT | COMPOSITING</p>
-  <h1 class="heading">VFX Artist</h1>
+
+  <h1 class="heading">
+    VFX Artist
+  </h1>
 
   <p class="description">
     I craft cinematic visuals and seamless compositing for film,
-    advertising and digital content.
+    advertising, and digital content. Focused on realism,
+    storytelling and detail.
   </p>
 </section>
 
-<!-- FULL WIDTH VIDEO -->
+<!-- ================= SECTION 2 — VIDEO ================= -->
+
 <section class="video-section">
   <div class="video-wrapper">
     <iframe
@@ -145,42 +170,47 @@ body {
   </div>
 </section>
 
-<!-- SOFTWARE -->
-<section class="software">
+<!-- ================= SECTION 3 — SOFTWARES ================= -->
+
+<section class="section software">
+
   <div class="software-header">
     <p class="tagline">INDUSTRY TOOLS I USE</p>
     <h2>Softwares</h2>
   </div>
 
   <div class="software-grid">
-    <div>
+
+    <div class="software-item">
       <div class="logo-box">
         <img src="images/nuke.png">
       </div>
-      Nuke
+      <div class="software-name">Nuke</div>
     </div>
 
-    <div>
+    <div class="software-item">
       <div class="logo-box">
         <img src="images/blender.png">
       </div>
-      Blender
+      <div class="software-name">Blender</div>
     </div>
 
-    <div>
+    <div class="software-item">
       <div class="logo-box">
         <img src="images/maya.png">
       </div>
-      Maya
+      <div class="software-name">Maya</div>
     </div>
 
-    <div>
+    <div class="software-item">
       <div class="logo-box">
         <img src="images/ae.png">
       </div>
-      After Effects
+      <div class="software-name">After Effects</div>
     </div>
+
   </div>
+
 </section>
 
 </body>
