@@ -53,51 +53,41 @@ body{
   }
 }
 
-/* ================= SOFTWARES ================= */
+/* ================= VIDEO ================= */
 
-.software{
-  background:white;
+.video-section{
+  background:#e9e9e9;
 }
 
-.software-header{
-  text-align:right;
-  margin-bottom:70px;
+.video-wrapper{
+  position:relative;
+  width:calc(100% - 80px);
+  margin:60px auto;
+  height:85vh;
+  max-height:850px;
+  border-radius:18px;
+  overflow:hidden;
+  background:black;
 }
 
-.software-header h2{
-  font-size:70px;
-  margin:10px 0 0;
+/* 16:9 cinematic scaling */
+.video-wrapper iframe{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100vw;
+  height:56.25vw;
+  min-height:100%;
+  min-width:177.77vh;
+  transform:translate(-50%,-50%);
+  border:0;
 }
 
-.software-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:60px;
-  text-align:center;
-}
-
-.software-item{
-  transition:.3s;
-}
-
-.software-item:hover{
-  transform:scale(1.08);
-}
-
-.logo-box{
-  width:90px;
-  height:90px;
-  margin:auto;
-}
-
-.logo-box img{
-  width:100%;
-  object-fit:contain;
-}
-
-.software-name{
-  margin-top:12px;
-  font-weight:500;
+@media(max-width:768px){
+  .video-wrapper{
+    width:calc(100% - 30px);
+    height:60vh;
+  }
 }
 
 </style>
@@ -121,47 +111,16 @@ body{
   </p>
 </section>
 
-<!-- ================= SOFTWARES ================= -->
+<!-- ================= VIDEO ================= -->
 
-<section class="section software">
-
-  <div class="software-header">
-    <p class="tagline">INDUSTRY TOOLS I USE</p>
-    <h2>Softwares</h2>
+<section class="video-section">
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/weN28bKNqdY"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
   </div>
-
-  <div class="software-grid">
-
-    <div class="software-item">
-      <div class="logo-box">
-        <img src="images/nuke.png">
-      </div>
-      <div class="software-name">Nuke</div>
-    </div>
-
-    <div class="software-item">
-      <div class="logo-box">
-        <img src="images/blender.png">
-      </div>
-      <div class="software-name">Blender</div>
-    </div>
-
-    <div class="software-item">
-      <div class="logo-box">
-        <img src="images/maya.png">
-      </div>
-      <div class="software-name">Maya</div>
-    </div>
-
-    <div class="software-item">
-      <div class="logo-box">
-        <img src="images/ae.png">
-      </div>
-      <div class="software-name">After Effects</div>
-    </div>
-
-  </div>
-
 </section>
 
 </body>
