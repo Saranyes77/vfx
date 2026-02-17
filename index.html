@@ -17,7 +17,7 @@ body{
 /* ================= SECTION SPACING ================= */
 
 .section{
-  padding:100px 80px;   /* true margin from left */
+  padding:100px 80px;   /* margin from page edge */
 }
 
 @media(max-width:768px){
@@ -99,7 +99,7 @@ body{
   max-width:1000px;
   margin:0 auto;
   position:relative;
-  padding-top:56.25%;
+  padding-top:56.25%; /* 16:9 ratio */
 }
 
 .video-wrapper iframe{
@@ -177,7 +177,6 @@ body{
 
 <!-- HERO -->
 <section class="section">
-
   <p class="tagline">ROTO | ROTO PAINT | COMPOSITING</p>
 
   <h1 class="heading">
@@ -195,15 +194,15 @@ body{
     <a href="#" class="btn btn-outline">Email</a>
     <a href="#" class="btn btn-outline">Resume</a>
   </div>
-
 </section>
 
 <!-- VIDEO -->
 <section class="video-section">
   <div class="video-wrapper">
     <iframe 
-      src="https:https://youtu.be/weN28bKNqdY?si=e1U4enEOHOVypvIF"
+      src="https://www.youtube.com/embed/weN28bKNqdY"
       frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
   </div>
@@ -211,14 +210,12 @@ body{
 
 <!-- SOFTWARE -->
 <section class="software">
-
   <div class="software-header">
     <p class="tagline">INDUSTRY TOOLS I USE</p>
     <h2>Softwares</h2>
   </div>
 
   <div class="software-grid">
-
     <div class="software-item">
       <div class="logo-box">
         <img src="images/nuke.png" alt="Nuke">
@@ -260,9 +257,7 @@ body{
       </div>
       <div class="software-name">Photoshop</div>
     </div>
-
   </div>
-
 </section>
 
 </body>
