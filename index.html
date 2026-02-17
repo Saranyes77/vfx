@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VFX Artist</title>
 
 <style>
@@ -13,34 +13,20 @@ body {
   line-height: 1.6;
 }
 
-/* ================= SECTION SPACING ================= */
+/* ================= HERO ================= */
 .section {
   padding: 100px 80px;
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 60px 25px;
-  }
-}
-
-/* ================= HERO ================= */
 .tagline {
   font-size: 18px;
   color: rgba(0,0,0,0.7);
-  margin-bottom: 20px;
 }
 
 .heading {
-  font-size: 70px;
+  font-size: 80px;
   font-weight: 800;
   margin: 0;
-}
-
-@media (min-width: 768px) {
-  .heading {
-    font-size: 110px;
-  }
 }
 
 .description {
@@ -50,67 +36,38 @@ body {
   color: rgba(0,0,0,0.7);
 }
 
-.buttons {
-  margin-top: 40px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+/* ================= FULL VIDEO HERO ================= */
 
-.btn {
-  padding: 14px 28px;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s ease;
-  display: inline-block;
-}
-
-.btn-primary {
-  background: black;
-  color: white;
-}
-
-.btn-primary:hover {
-  transform: scale(1.05);
-}
-
-.btn-outline {
-  border: 2px solid black;
-  color: black;
-}
-
-.btn-outline:hover {
-  background: black;
-  color: white;
-}
-
-/* ================= VIDEO ================= */
 .video-section {
-  background: white;
-  padding: 120px 20px;
+  width: 100%;
+  background: black;
 }
 
 .video-wrapper {
+  position: relative;
   width: 100%;
-  max-width: 480px;      /* SMALL SIZE */
-  margin: 0 auto;
-  aspect-ratio: 16/9;    /* PERFECT RECTANGLE */
-  background: black;
-  border-radius: 14px;
+  height: 90vh;              /* almost full screen */
+  max-height: 900px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .video-wrapper iframe {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;           /* 16:9 ratio */
+  min-height: 100%;
+  min-width: 177.77vh;       /* 16:9 ratio */
+  transform: translate(-50%, -50%);
   border: 0;
 }
 
 /* ================= SOFTWARE ================= */
+
 .software {
   padding: 120px 80px;
+  background: white;
 }
 
 .software-header {
@@ -120,83 +77,65 @@ body {
 
 .software-header h2 {
   font-size: 70px;
-  margin: 10px 0 0 0;
-}
-
-@media (min-width: 768px) {
-  .software-header h2 {
-    font-size: 100px;
-  }
 }
 
 .software-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
   gap: 60px;
-}
-
-.software-item {
   text-align: center;
-  transition: 0.3s ease;
-}
-
-.software-item:hover {
-  transform: scale(1.08);
 }
 
 .logo-box {
   width: 90px;
   height: 90px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: auto;
 }
 
 .logo-box img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
   object-fit: contain;
 }
 
-.software-name {
-  margin-top: 12px;
-  font-size: 15px;
-  font-weight: 500;
-  color: rgba(0,0,0,0.8);
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+.heading {
+  font-size: 48px;
+}
+
+.section {
+  padding: 60px 25px;
+}
+
+.video-wrapper {
+  height: 60vh;
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<!-- HERO TEXT -->
 <section class="section">
   <p class="tagline">ROTO | ROTO PAINT | COMPOSITING</p>
-
-  <h1 class="heading">
-    VFX <br /> Artist
-  </h1>
+  <h1 class="heading">VFX Artist</h1>
 
   <p class="description">
     I craft cinematic visuals and seamless compositing for film,
-    advertising, and digital content. Focused on realism,
-    storytelling, and detail.
+    advertising and digital content.
   </p>
-
-  <div class="buttons">
-    <a href="#" class="btn btn-primary">LinkedIn</a>
-    <a href="#" class="btn btn-outline">Email</a>
-    <a href="#" class="btn btn-outline">Resume</a>
-  </div>
 </section>
 
-<!-- VIDEO -->
+<!-- FULL WIDTH VIDEO -->
 <section class="video-section">
   <div class="video-wrapper">
     <iframe
       src="https://www.youtube.com/embed/weN28bKNqdY"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allow="autoplay; encrypted-media"
       allowfullscreen>
     </iframe>
   </div>
@@ -210,49 +149,33 @@ body {
   </div>
 
   <div class="software-grid">
-
-    <div class="software-item">
+    <div>
       <div class="logo-box">
-        <img src="images/nuke.png" alt="Nuke">
+        <img src="images/nuke.png">
       </div>
-      <div class="software-name">Nuke</div>
+      Nuke
     </div>
 
-    <div class="software-item">
+    <div>
       <div class="logo-box">
-        <img src="images/blender.png" alt="Blender">
+        <img src="images/blender.png">
       </div>
-      <div class="software-name">Blender</div>
+      Blender
     </div>
 
-    <div class="software-item">
+    <div>
       <div class="logo-box">
-        <img src="images/maya.png" alt="Maya">
+        <img src="images/maya.png">
       </div>
-      <div class="software-name">Maya</div>
+      Maya
     </div>
 
-    <div class="software-item">
+    <div>
       <div class="logo-box">
-        <img src="images/ae.png" alt="After Effects">
+        <img src="images/ae.png">
       </div>
-      <div class="software-name">After Effects</div>
+      After Effects
     </div>
-
-    <div class="software-item">
-      <div class="logo-box">
-        <img src="images/pr.png" alt="Premiere Pro">
-      </div>
-      <div class="software-name">Premiere Pro</div>
-    </div>
-
-    <div class="software-item">
-      <div class="logo-box">
-        <img src="images/ps.png" alt="Photoshop">
-      </div>
-      <div class="software-name">Photoshop</div>
-    </div>
-
   </div>
 </section>
 
