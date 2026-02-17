@@ -14,10 +14,10 @@ body{
   line-height:1.6;
 }
 
-/* ================= COMMON CONTAINER ================= */
+/* ================= SECTION SPACING ================= */
 
 .section{
-  padding:100px 60px;
+  padding:100px 80px;   /* true margin from left */
 }
 
 @media(max-width:768px){
@@ -26,16 +26,7 @@ body{
   }
 }
 
-.container{
-  max-width:1200px;
-  margin:0 auto;
-}
-
 /* ================= HERO ================= */
-
-.hero-content{
-  max-width:700px;
-}
 
 .tagline{
   font-size:18px;
@@ -44,20 +35,21 @@ body{
 }
 
 .heading{
-  font-size:60px;
+  font-size:70px;
   font-weight:800;
   margin:0;
 }
 
 @media(min-width:768px){
   .heading{
-    font-size:90px;
+    font-size:110px;
   }
 }
 
 .description{
   margin-top:30px;
   font-size:20px;
+  max-width:600px;
   color:rgba(0,0,0,0.7);
 }
 
@@ -100,11 +92,11 @@ body{
 
 .video-section{
   background:white;
-  padding:120px 60px;
+  padding:120px 80px;
 }
 
 .video-wrapper{
-  max-width:900px;
+  max-width:1000px;
   margin:0 auto;
   position:relative;
   padding-top:56.25%;
@@ -123,29 +115,29 @@ body{
 /* ================= SOFTWARE ================= */
 
 .software{
-  padding:120px 60px;
+  padding:120px 80px;
 }
 
 .software-header{
-  text-align:right; /* opposite of hero */
-  margin-bottom:60px;
+  text-align:right;   /* opposite of hero */
+  margin-bottom:70px;
 }
 
 .software-header h2{
-  font-size:60px;
+  font-size:70px;
   margin:10px 0 0 0;
 }
 
 @media(min-width:768px){
   .software-header h2{
-    font-size:80px;
+    font-size:100px;
   }
 }
 
 .software-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:50px;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:60px;
 }
 
 .software-item{
@@ -185,27 +177,25 @@ body{
 
 <!-- HERO -->
 <section class="section">
-  <div class="container">
-    <div class="hero-content">
-      <p class="tagline">ROTO | ROTO PAINT | COMPOSITING</p>
 
-      <h1 class="heading">
-        VFX <br> Artist
-      </h1>
+  <p class="tagline">ROTO | ROTO PAINT | COMPOSITING</p>
 
-      <p class="description">
-        I craft cinematic visuals and seamless compositing for film,
-        advertising, and digital content. Focused on realism,
-        storytelling, and detail.
-      </p>
+  <h1 class="heading">
+    VFX <br> Artist
+  </h1>
 
-      <div class="buttons">
-        <a href="#" class="btn btn-primary">LinkedIn</a>
-        <a href="#" class="btn btn-outline">Email</a>
-        <a href="#" class="btn btn-outline">Resume</a>
-      </div>
-    </div>
+  <p class="description">
+    I craft cinematic visuals and seamless compositing for film,
+    advertising, and digital content. Focused on realism,
+    storytelling, and detail.
+  </p>
+
+  <div class="buttons">
+    <a href="#" class="btn btn-primary">LinkedIn</a>
+    <a href="#" class="btn btn-outline">Email</a>
+    <a href="#" class="btn btn-outline">Resume</a>
   </div>
+
 </section>
 
 <!-- VIDEO -->
@@ -221,60 +211,58 @@ body{
 
 <!-- SOFTWARE -->
 <section class="software">
-  <div class="container">
 
-    <div class="software-header">
-      <p class="tagline">INDUSTRY TOOLS I USE</p>
-      <h2>Softwares</h2>
+  <div class="software-header">
+    <p class="tagline">INDUSTRY TOOLS I USE</p>
+    <h2>Softwares</h2>
+  </div>
+
+  <div class="software-grid">
+
+    <div class="software-item">
+      <div class="logo-box">
+        <img src="images/nuke.png" alt="Nuke">
+      </div>
+      <div class="software-name">Nuke</div>
     </div>
 
-    <div class="software-grid">
-
-      <div class="software-item">
-        <div class="logo-box">
-          <img src="images/nuke.png" alt="Nuke">
-        </div>
-        <div class="software-name">Nuke</div>
+    <div class="software-item">
+      <div class="logo-box">
+        <img src="images/blender.png" alt="Blender">
       </div>
+      <div class="software-name">Blender</div>
+    </div>
 
-      <div class="software-item">
-        <div class="logo-box">
-          <img src="images/blender.png" alt="Blender">
-        </div>
-        <div class="software-name">Blender</div>
+    <div class="software-item">
+      <div class="logo-box">
+        <img src="images/maya.png" alt="Maya">
       </div>
+      <div class="software-name">Maya</div>
+    </div>
 
-      <div class="software-item">
-        <div class="logo-box">
-          <img src="images/maya.png" alt="Maya">
-        </div>
-        <div class="software-name">Maya</div>
+    <div class="software-item">
+      <div class="logo-box">
+        <img src="images/ae.png" alt="After Effects">
       </div>
+      <div class="software-name">After Effects</div>
+    </div>
 
-      <div class="software-item">
-        <div class="logo-box">
-          <img src="images/ae.png" alt="After Effects">
-        </div>
-        <div class="software-name">After Effects</div>
+    <div class="software-item">
+      <div class="logo-box">
+        <img src="images/pr.png" alt="Premiere Pro">
       </div>
+      <div class="software-name">Premiere Pro</div>
+    </div>
 
-      <div class="software-item">
-        <div class="logo-box">
-          <img src="images/pr.png" alt="Premiere Pro">
-        </div>
-        <div class="software-name">Premiere Pro</div>
+    <div class="software-item">
+      <div class="logo-box">
+        <img src="images/ps.png" alt="Photoshop">
       </div>
-
-      <div class="software-item">
-        <div class="logo-box">
-          <img src="images/ps.png" alt="Photoshop">
-        </div>
-        <div class="software-name">Photoshop</div>
-      </div>
-
+      <div class="software-name">Photoshop</div>
     </div>
 
   </div>
+
 </section>
 
 </body>
