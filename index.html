@@ -1,203 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Saran Selvakumar | VFX Compositor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
+<!-- FONT (closest visual match) -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
 /* ================= GLOBAL ================= */
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #111;
-  color: #fff;
-}
-
-.section {
-  padding: 100px 80px;
-}
-
-@media (max-width:768px){
-  .section{
-    padding:60px 25px;
-  }
-}
-
-/* ================= HERO (REFERENCE STYLE) ================= */
-
-.hero{
-  background: linear-gradient(135deg,#1b1b1b,#0e0e0e);
-  position:relative;
-}
-
-.hero-container{
-  display:grid;
-  grid-template-columns: 1fr 1.1fr;
-  align-items:center;
-  gap:80px;
-}
-
-@media(max-width:1000px){
-  .hero-container{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-}
-
-/* PHOTO */
-
-.hero-image{
-  position:relative;
-}
-
-.hero-image img{
-  width:100%;
-  max-width:420px;
-  display:block;
-  filter:grayscale(100%);
-}
-
-.hero-image::before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:#f4b21d;
-  top:30px;
-  left:30px;
-  z-index:-1;
-}
-
-/* RIGHT CONTENT */
-
-.hero-line{
-  width:80px;
-  height:4px;
-  background:#f4b21d;
-  margin-bottom:20px;
-}
-
-.hero-name{
-  font-size:60px;
-  font-weight:900;
+body{
   margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#e9e7e6;
+  color:#2b2f35;
 }
 
-.hero-role{
-  font-size:18px;
-  letter-spacing:2px;
-  color:#f4b21d;
-  margin:15px 0 30px 0;
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 40px;
 }
 
-.hero-text{
-  color:#ccc;
-  max-width:500px;
+/* ================= GRID LAYOUT ================= */
+
+.layout{
+  display:grid;
+  grid-template-columns: 420px 1fr 300px;
+  gap:60px;
+  align-items:start;
+}
+
+/* ================= LEFT IMAGE ================= */
+
+.profile img{
+  width:100%;
+  border-radius:35px;
+  object-fit:cover;
+}
+
+/* ================= CENTER CONTENT ================= */
+
+h1{
+  font-size:72px;
+  margin:0;
+  font-weight:800;
+}
+
+.intro{
+  margin-top:20px;
+  font-size:16px;
   line-height:1.8;
-}
-
-/* BUTTONS */
-
-.hero-buttons{
-  margin-top:40px;
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  text-decoration:none;
-  padding:14px 30px;
-  font-weight:bold;
-  border-radius:4px;
-  transition:.3s;
-}
-
-.btn.primary{
-  background:#f4b21d;
-  color:#111;
-}
-
-.btn.primary:hover{
-  background:#fff;
-}
-
-.btn.secondary{
-  border:2px solid #f4b21d;
-  color:#f4b21d;
-}
-
-.btn.secondary:hover{
-  background:#f4b21d;
-  color:#111;
-}
-
-/* ================= SOFTWARES ================= */
-
-.softwares{
-  background:#181818;
-  text-align:center;
+  color:#444;
+  max-width:520px;
 }
 
 .section-title{
-  font-size:50px;
-  font-weight:900;
-  margin-bottom:60px;
+  font-weight:800;
+  margin-top:40px;
+  font-size:28px;
 }
 
-.software-grid{
+.edu{
+  margin-top:10px;
+  font-size:15px;
+}
+
+.edu strong{
+  font-weight:600;
+}
+
+/* ================= RIGHT COLUMN ================= */
+
+.skills-title,
+.exp-title{
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.skills-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:40px;
-  max-width:900px;
-  margin:auto;
+  grid-template-columns:repeat(3,70px);
+  gap:15px;
 }
 
-.software-grid img{
+.skill{
   width:70px;
-  margin:auto;
-  filter:grayscale(100%);
-  transition:.3s;
+  height:70px;
+  background:#3a3f46;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:600;
+  font-size:20px;
 }
 
-.software-grid img:hover{
-  filter:none;
-  transform:scale(1.1);
+/* ================= EXPERIENCE ================= */
+
+.exp{
+  margin-top:40px;
 }
 
-/* ================= SHOWREEL ================= */
+.exp-item{
+  margin-bottom:20px;
+}
 
-.showreel{
-  background:#111;
+.year{
+  font-weight:700;
+}
+
+/* ================= FOOTER CONTACT ================= */
+
+.contact{
+  margin-top:60px;
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+  font-size:14px;
+  color:#555;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+.layout{
+  grid-template-columns:1fr;
   text-align:center;
 }
 
-.video-wrapper{
-  position:relative;
-  padding-bottom:56.25%;
-  height:0;
-  max-width:1000px;
+.intro{
   margin:auto;
-  border:4px solid #f4b21d;
 }
 
-.video-wrapper iframe{
-  position:absolute;
-  width:100%;
-  height:100%;
-  border:none;
+.skills-grid{
+  justify-content:center;
 }
 
-/* ================= FOOTER ================= */
+.contact{
+  justify-content:center;
+}
 
-.footer{
-  background:#000;
-  text-align:center;
-  padding:40px;
-  color:#aaa;
 }
 
 </style>
@@ -205,69 +155,81 @@ body {
 
 <body>
 
-<!-- ================= HERO ================= -->
+<div class="container">
 
-<section class="section hero">
-<div class="hero-container">
+<div class="layout">
 
-  <div class="hero-image">
-    <img src="profile.jpg" alt="Saran Selvakumar">
+  <!-- LEFT IMAGE -->
+  <div class="profile">
+    <img src="profile.jpg" alt="Profile">
   </div>
 
+  <!-- CENTER CONTENT -->
   <div>
-    <div class="hero-line"></div>
 
-    <h1 class="hero-name">Saran Selvakumar</h1>
+    <h1>Hello!</h1>
 
-    <div class="hero-role">
-      VFX COMPOSITOR  ||  ROTO  ||  ROTO PAINT
-    </div>
-
-    <p class="hero-text">
-      I am a dedicated VFX Compositor specializing in high-end compositing,
-      roto, and roto paint workflows for film and digital media. My expertise
-      lies in seamlessly integrating CG elements with live-action plates,
-      refining edge details, and ensuring photorealistic visual continuity.
-      I focus on precision, clean mattes, accurate color matching, and
-      delivering production-ready shots that meet cinematic standards.
+    <p class="intro">
+      My name is Thao Hoa (Bong). My strengths are Visual Development,
+      Illustration and Concept art. I love creating and storytelling.
+      I look forward to contributing my creativity and skills to innovative
+      projects.
+      <br><br>
+      Hope you enjoy my portfolio!
     </p>
 
-    <div class="hero-buttons">
-      <a href="#showreel" class="btn primary">View Showreel</a>
-      <a href="cv.pdf" class="btn secondary" download>Download CV</a>
+    <div class="section-title">EDUCATION</div>
+
+    <div class="edu">
+      <strong>2020 – 2024: Ho Chi Minh University of Fine Art</strong><br>
+      Graduated with a major in Multimedia Design
     </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div>
+
+    <div class="skills-title">SKILLS</div>
+
+    <div class="skills-grid">
+      <div class="skill">Ps</div>
+      <div class="skill">Pr</div>
+      <div class="skill">Id</div>
+      <div class="skill">Ai</div>
+      <div class="skill">Ae</div>
+      <div class="skill">Sp</div>
+    </div>
+
+    <div class="exp">
+
+      <div class="exp-title">EXPERIENCE</div>
+
+      <div class="exp-item">
+        <div class="year">2020 – 2023</div>
+        Illustration at Huta Chan Studio
+      </div>
+
+      <div class="exp-item">
+        <div class="year">2022 – Present</div>
+        Freelance Illustration Artist
+      </div>
+
+    </div>
+
   </div>
 
 </div>
-</section>
 
-
-<!-- ================= SOFTWARES ================= -->
-
-<section class="section softwares">
-<h2 class="section-title">Softwares I Use</h2>
-<div class="software-grid">
-  <img src="ae.png">
-  <img src="blender.png">
-  <img src="maya.png">
-  <img src="nuke.png">
-  <img src="pr.png">
-  <img src="ps.png">
+<!-- CONTACT -->
+<div class="contact">
+  <div>📞 0789 368 731</div>
+  <div>✉️ bongart0608@gmail.com</div>
+  <div>🌐 www.artstation.com/bongart0608</div>
+  <div>📷 @bongart0608</div>
 </div>
-</section>
 
-
-<!-- ================= SHOWREEL ================= -->
-
-<section class="section showreel" id="showreel">
-<h2 class="section-title">Showreel</h2>
-<div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-allowfullscreen></iframe>
 </div>
-</section>
-
-
 
 </body>
 </html>
