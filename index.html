@@ -10,13 +10,22 @@
 
 <style>
 
+/* ================= COLORS ================= */
+
+:root{
+  --black:#000;
+  --white:#fff;
+  --red:#e10600;
+  --gray:#cfcfcf;
+}
+
 /* ================= GLOBAL ================= */
 
 body{
   margin:0;
   font-family:'Poppins', sans-serif;
-  background:#000;
-  color:#fff;
+  background:var(--black);
+  color:var(--white);
 }
 
 .container{
@@ -25,7 +34,7 @@ body{
   padding:80px 40px;
 }
 
-/* ================= HEADER ================= */
+/* ================= HEADER CARD ================= */
 
 .header{
   display:grid;
@@ -37,7 +46,7 @@ body{
 
 .profile img{
   width:100%;
-  border-radius:20px;
+  border-radius:25px;
 }
 
 h1{
@@ -48,32 +57,14 @@ h1{
 
 .role{
   margin-top:10px;
+  color:var(--red);
   font-weight:600;
-  opacity:.8;
 }
 
 .intro{
   margin-top:20px;
+  color:var(--gray);
   line-height:1.8;
-  opacity:.85;
-}
-
-/* ================= BUTTON ================= */
-
-.cv-btn{
-  margin-top:25px;
-  display:inline-block;
-  padding:12px 26px;
-  background:#fff;
-  color:#000;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:600;
-  transition:.3s;
-}
-
-.cv-btn:hover{
-  background:#ccc;
 }
 
 /* ================= POSTER GRID ================= */
@@ -93,10 +84,11 @@ h1{
   gap:60px;
 }
 
-/* BOX STYLE */
+/* BLOCK STYLE */
 
 .block{
-  border:2px solid #fff;
+  background:#0b0b0b;
+  border:2px solid var(--red);
   border-radius:18px;
   padding:30px;
 }
@@ -104,7 +96,7 @@ h1{
 /* TITLES */
 
 .section-title{
-  font-size:40px;
+  font-size:28px;
   font-weight:800;
   margin-bottom:20px;
 }
@@ -113,23 +105,49 @@ h1{
 
 .skills-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(70px,1fr));
+  grid-template-columns:repeat(3,70px);
   gap:15px;
 }
 
 .skill{
+  width:70px;
   height:70px;
   background:#fff;
+  border:2px solid var(--red);
   border-radius:12px;
   display:flex;
   align-items:center;
   justify-content:center;
+  transition:.3s;
 }
 
 .skill img{
   width:40px;
   height:40px;
   object-fit:contain;
+}
+
+.skill:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 20px rgba(225,6,0,.4);
+}
+
+/* ================= BUTTON ================= */
+
+.cv-btn{
+  margin-top:20px;
+  display:inline-block;
+  padding:12px 26px;
+  background:var(--red);
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+}
+
+.cv-btn:hover{
+  background:#fff;
+  color:#000;
 }
 
 /* ================= SHOWREEL ================= */
@@ -147,7 +165,7 @@ h1{
   aspect-ratio:16/9;
   border-radius:20px;
   overflow:hidden;
-  border:2px solid #fff;
+  border:2px solid var(--red);
 }
 
 .video-wrapper iframe{
@@ -167,16 +185,12 @@ h1{
   text-align:center;
 }
 
-.header h1{
-  order:-2;
-}
-
-.profile{
-  order:-1;
-}
-
 .poster{
   grid-template-columns:1fr;
+}
+
+.skills-grid{
+  justify-content:center;
 }
 
 }
@@ -191,6 +205,10 @@ h1{
 <!-- ================= HEADER ================= -->
 
 <div class="header">
+
+  <div class="profile">
+    <img src="DP.jpg" alt="Saran Selvakumar">
+  </div>
 
   <div>
     <h1>Saran Selvakumar</h1>
@@ -207,25 +225,22 @@ h1{
     </p>
 
     <a href="cv.pdf" class="cv-btn" download>Download CV</a>
-  </div>
 
-  <div class="profile">
-    <img src="DP.jpg" alt="Saran Selvakumar">
   </div>
 
 </div>
 
-<!-- ================= CONTENT GRID ================= -->
+<!-- ================= POSTER CONTENT ================= -->
 
 <div class="poster">
 
-<!-- LEFT -->
+<!-- LEFT COLUMN -->
 <div class="left-column">
 
   <div class="block">
     <div class="section-title">About Me</div>
     <p>
-      Passionate VFX compositor focused on seamless integration,
+      Passionate VFX compositor focused on seamless visual integration,
       cleanup workflows and high-quality compositing pipelines.
     </p>
   </div>
@@ -238,9 +253,18 @@ h1{
     </p>
   </div>
 
+  <div class="block">
+    <div class="section-title">AI Tools</div>
+    <p>
+      ChatGPT<br>
+      Adobe Firefly<br>
+      Midjourney
+    </p>
+  </div>
+
 </div>
 
-<!-- RIGHT -->
+<!-- RIGHT COLUMN -->
 <div class="right-column">
 
   <div class="block">
@@ -262,6 +286,7 @@ h1{
       Compositing<br>
       Roto<br>
       RotoPaint<br>
+      Color Matching<br>
       Cleanup<br>
       Matchmove
     </p>
