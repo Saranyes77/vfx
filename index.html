@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VFX Artist Portfolio</title>
+<title>VFX Portfolio</title>
 
 <style>
 
@@ -12,122 +12,130 @@
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:#ececec;
+  background:#dcdcdc;
   color:#111;
 }
 
 .section{
-  padding:90px 60px;
+  padding:80px 70px;
+  border-bottom:2px solid #111;
 }
 
-@media(max-width:768px){
-  .section{padding:60px 25px;}
-}
-
-h2{
-  font-size:42px;
-  margin-bottom:40px;
+h1,h2,h3{
+  margin:0;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-  background:white;
+  background:#efefef;
+  position:relative;
 }
 
-.hero h1{
-  font-size:100px;
-  margin:0;
-  font-weight:800;
+.hero-title{
+  font-size:120px;
+  font-weight:900;
+  line-height:1;
+  position:relative;
+  display:inline-block;
 }
 
-.hero p{
-  max-width:600px;
-  font-size:20px;
+.hero-title span{
+  background:#f4b21d;
+  padding:10px 25px;
+}
+
+.hero-sub{
   margin-top:20px;
+  font-size:20px;
+  max-width:600px;
 }
 
-/* ================= ABOUT (PRO DESIGN) ================= */
+/* ================= ABOUT ================= */
 
 .about{
-  background:#f7f7f7;
+  background:#f6f6f6;
 }
 
-.about-wrapper{
+.about-container{
   display:grid;
-  grid-template-columns:320px 1fr;
-  background:white;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:start;
 }
 
-/* LEFT SIDEBAR */
-
-.about-sidebar{
-  background:#f4b22c;
-  padding:40px 20px;
-  text-align:center;
+.about-left{
+  border-left:8px solid #f4b21d;
+  padding-left:25px;
 }
 
-.about-sidebar img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  border:6px solid white;
-}
-
-.menu{
-  margin-top:40px;
-}
-
-.menu div{
-  margin:20px 0;
-  font-weight:bold;
-  letter-spacing:1px;
-}
-
-/* RIGHT CONTENT */
-
-.about-content{
-  padding:60px;
-}
-
-.about-title{
+.about-left h2{
   font-size:50px;
-  font-weight:800;
-  margin-bottom:20px;
+  font-weight:900;
 }
 
 .about-text{
-  max-width:700px;
-  color:#555;
+  margin-top:20px;
+  color:#444;
+  line-height:1.8;
 }
 
-/* BOX INSIDE BOX (STATS) */
+/* SKILL BOXES */
 
-.stats{
+.skills{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  grid-template-columns:repeat(2,1fr);
   gap:20px;
-  margin-top:40px;
+  margin-top:30px;
 }
 
-.stat-box{
+.skill-box{
   background:#111;
   color:white;
   padding:25px;
-  text-align:center;
   border-radius:8px;
 }
 
-.stat-box h3{
+.skill-box h3{
   font-size:28px;
-  margin:0;
 }
 
-.stat-box span{
+.skill-box span{
   font-size:14px;
   opacity:.8;
+}
+
+/* ================= TABLE CONTENT ================= */
+
+.toc{
+  background:#efefef;
+  text-align:center;
+}
+
+.toc h2{
+  font-size:60px;
+  font-weight:900;
+  margin-bottom:50px;
+}
+
+.toc-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+.toc-card{
+  background:#f4b21d;
+  padding:50px 20px;
+  border-radius:20px;
+  font-weight:bold;
+  font-size:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  transition:.3s;
+}
+
+.toc-card:hover{
+  transform:translateY(-8px);
 }
 
 /* ================= SHOWREEL ================= */
@@ -155,8 +163,14 @@ h2{
 /* ================= SOFTWARES ================= */
 
 .softwares{
-  background:#f7f7f7;
+  background:#f6f6f6;
   text-align:center;
+}
+
+.softwares h2{
+  font-size:50px;
+  font-weight:900;
+  margin-bottom:50px;
 }
 
 .software-grid{
@@ -168,7 +182,8 @@ h2{
 }
 
 .software-grid img{
-  width:80px;
+  width:70px;
+  margin:auto;
   transition:.3s;
 }
 
@@ -185,75 +200,66 @@ h2{
   padding:40px;
 }
 
+@media(max-width:768px){
+  .hero-title{font-size:60px;}
+  .about-container{grid-template-columns:1fr;}
+  .skills{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="section hero">
-  <h1>VFX Artist</h1>
-  <p>
-    I create cinematic visual effects, simulations, compositing and digital
-    environments for film, advertising and interactive media.
+  <div class="hero-title"><span>PORTO</span> FOLIO.</div>
+  <p class="hero-sub">
+    Creative Visual Effects Artist specializing in compositing,
+    simulations and cinematic digital environments.
   </p>
 </section>
 
 
-<!-- ================= ABOUT ME ================= -->
+<!-- ABOUT -->
 
 <section class="section about">
 
-<div class="about-wrapper">
+<div class="about-container">
 
-  <!-- LEFT PANEL -->
-  <div class="about-sidebar">
-    <img src="profile.jpg" alt="profile">
-
-    <div class="menu">
-      <div>HOME</div>
-      <div>ABOUT</div>
-      <div>PORTFOLIO</div>
-      <div>CONTACT</div>
-    </div>
+  <div class="about-left">
+    <h2>HELLO.</h2>
+    <p class="about-text">
+      I'm a professional VFX Artist focused on storytelling through
+      cinematic visual effects. I combine technical precision and artistic
+      creativity to build immersive digital scenes for film, commercials,
+      and media productions.
+    </p>
   </div>
 
-  <!-- RIGHT CONTENT -->
-  <div class="about-content">
+  <div>
 
-    <div class="about-title">ABOUT ME</div>
-
-    <p class="about-text">
-      I'm a VFX Artist specializing in compositing, simulations, and cinematic
-      visual storytelling. My workflow combines technical precision with
-      artistic direction to create believable digital worlds and high-quality
-      visual effects for modern productions.
-    </p>
-
-    <!-- BOX INSIDE BOX -->
-    <div class="stats">
-
-      <div class="stat-box">
+    <div class="skills">
+      <div class="skill-box">
         <h3>5+</h3>
         <span>Years Experience</span>
       </div>
 
-      <div class="stat-box">
+      <div class="skill-box">
         <h3>120+</h3>
         <span>Projects Completed</span>
       </div>
 
-      <div class="stat-box">
+      <div class="skill-box">
         <h3>30+</h3>
         <span>Clients Worldwide</span>
       </div>
 
-      <div class="stat-box">
+      <div class="skill-box">
         <h3>24/7</h3>
-        <span>Creative Learning</span>
+        <span>Creative Development</span>
       </div>
-
     </div>
 
   </div>
@@ -262,38 +268,50 @@ h2{
 </section>
 
 
-<!-- ================= SHOWREEL ================= -->
+<!-- TABLE OF CONTENT -->
 
-<section class="section showreel">
-<h2>SHOWREEL</h2>
+<section class="section toc">
+  <h2>TABLE OF CONTENT.</h2>
 
-<div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-allowfullscreen></iframe>
-</div>
-
+  <div class="toc-grid">
+    <div class="toc-card">Compositing</div>
+    <div class="toc-card">3D Simulation</div>
+    <div class="toc-card">Environment Design</div>
+    <div class="toc-card">Color & Finishing</div>
+  </div>
 </section>
 
 
-<!-- ================= SOFTWARES ================= -->
+<!-- SHOWREEL -->
+
+<section class="section showreel">
+  <h2>SHOWREEL</h2>
+
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+    allowfullscreen></iframe>
+  </div>
+</section>
+
+
+<!-- SOFTWARES -->
 
 <section class="section softwares">
-<h2>SOFTWARES I USE</h2>
+  <h2>SOFTWARES</h2>
 
-<div class="software-grid">
-<img src="ae.png">
-<img src="blender.png">
-<img src="maya.png">
-<img src="nuke.png">
-<img src="pr.png">
-<img src="ps.png">
-</div>
-
+  <div class="software-grid">
+    <img src="ae.png">
+    <img src="blender.png">
+    <img src="maya.png">
+    <img src="nuke.png">
+    <img src="pr.png">
+    <img src="ps.png">
+  </div>
 </section>
 
 
 <footer class="footer">
-© 2026 VFX Artist Portfolio
+© 2026 VFX Portfolio
 </footer>
 
 </body>
