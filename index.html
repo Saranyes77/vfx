@@ -34,7 +34,7 @@ body{
   align-items:start;
 }
 
-/* IMAGE */
+/* PROFILE IMAGE */
 
 .profile img{
   width:100%;
@@ -116,9 +116,19 @@ h1{
   display:flex;
   align-items:center;
   justify-content:center;
-  color:white;
-  font-weight:600;
-  font-size:18px;
+  transition:.3s ease;
+}
+
+.skill img{
+  width:38px;
+  height:38px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+}
+
+.skill:hover{
+  transform:translateY(-6px);
+  background:#2b2f35;
 }
 
 /* EXPERIENCE */
@@ -135,14 +145,14 @@ h1{
   font-weight:700;
 }
 
-/* ================= VIDEO SECTION FIX ================= */
+/* ================= VIDEO SECTION ================= */
 
 .video-section{
   margin-top:100px;
   width:100%;
+  text-align:center;
 }
 
-/* full alignment */
 .video-wrapper{
   position:relative;
   width:100%;
@@ -154,7 +164,6 @@ h1{
   box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* iframe fill correctly */
 .video-wrapper iframe{
   position:absolute;
   inset:0;
@@ -175,7 +184,7 @@ h1{
   color:#555;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:1000px){
 
@@ -207,12 +216,12 @@ h1{
 
 <div class="layout">
 
-<!-- IMAGE -->
+<!-- PROFILE IMAGE -->
 <div class="profile">
-  <img src="DP" alt="Saran Selvakumar">
+  <img src="DP.jpg" alt="Saran Selvakumar">
 </div>
 
-<!-- CENTER -->
+<!-- CENTER CONTENT -->
 <div>
 
   <h1>Hello!</h1>
@@ -241,18 +250,37 @@ h1{
 
 </div>
 
-<!-- RIGHT -->
+<!-- RIGHT COLUMN -->
 <div>
 
   <div class="skills-title">SKILLS</div>
 
   <div class="skills-grid">
-    <div class="skill">NU</div>
-    <div class="skill">AE</div>
-    <div class="skill">PS</div>
-    <div class="skill">RO</div>
-    <div class="skill">RP</div>
-    <div class="skill">CG</div>
+
+    <div class="skill">
+      <img src="nuke.png" alt="Nuke">
+    </div>
+
+    <div class="skill">
+      <img src="ae.png" alt="After Effects">
+    </div>
+
+    <div class="skill">
+      <img src="ps.png" alt="Photoshop">
+    </div>
+
+    <div class="skill">
+      <img src="maya.png" alt="Maya">
+    </div>
+
+    <div class="skill">
+      <img src="blender.png" alt="Blender">
+    </div>
+
+    <div class="skill">
+      <img src="pr.png" alt="Premiere Pro">
+    </div>
+
   </div>
 
   <div class="exp">
@@ -270,17 +298,19 @@ h1{
 
 </div>
 
-<!-- YOUTUBE VIDEO -->
+<!-- SHOWREEL -->
 
 <div class="video-section">
   <h2 class="section-title">SHOWREEL</h2>
 
   <div class="video-wrapper">
-<iframe
-  src="https://www.youtube.com/embed/p2YKLemOpMw"
-  title="VFX Showreel"
-  allowfullscreen>
-</iframe>
+    <iframe
+      src="https://www.youtube.com/embed/p2YKLemOpMw"
+      title="VFX Showreel"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
   </div>
 </div>
 
