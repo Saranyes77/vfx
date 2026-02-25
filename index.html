@@ -10,22 +10,13 @@
 
 <style>
 
-/* ================= COLORS ================= */
-
-:root{
-  --black:#000;
-  --white:#fff;
-  --red:#e10600;
-  --gray:#cfcfcf;
-}
-
 /* ================= GLOBAL ================= */
 
 body{
   margin:0;
   font-family:'Poppins', sans-serif;
-  background:var(--black);
-  color:var(--white);
+  background:#000;
+  color:#fff;
 }
 
 .container{
@@ -34,7 +25,7 @@ body{
   padding:80px 40px;
 }
 
-/* ================= HEADER CARD ================= */
+/* ================= HEADER ================= */
 
 .header{
   display:grid;
@@ -46,7 +37,7 @@ body{
 
 .profile img{
   width:100%;
-  border-radius:25px;
+  border-radius:20px;
 }
 
 h1{
@@ -57,14 +48,32 @@ h1{
 
 .role{
   margin-top:10px;
-  color:var(--red);
   font-weight:600;
+  opacity:.8;
 }
 
 .intro{
   margin-top:20px;
-  color:var(--gray);
   line-height:1.8;
+  opacity:.85;
+}
+
+/* ================= BUTTON ================= */
+
+.cv-btn{
+  margin-top:25px;
+  display:inline-block;
+  padding:12px 26px;
+  background:#fff;
+  color:#000;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.cv-btn:hover{
+  background:#ccc;
 }
 
 /* ================= POSTER GRID ================= */
@@ -84,11 +93,10 @@ h1{
   gap:60px;
 }
 
-/* BLOCK STYLE */
+/* BOX STYLE */
 
 .block{
-  background:#0b0b0b;
-  border:2px solid var(--red);
+  border:2px solid #fff;
   border-radius:18px;
   padding:30px;
 }
@@ -105,49 +113,23 @@ h1{
 
 .skills-grid{
   display:grid;
-  grid-template-columns:repeat(3,70px);
+  grid-template-columns:repeat(auto-fit,minmax(70px,1fr));
   gap:15px;
 }
 
 .skill{
-  width:70px;
   height:70px;
   background:#fff;
-  border:2px solid var(--red);
   border-radius:12px;
   display:flex;
   align-items:center;
   justify-content:center;
-  transition:.3s;
 }
 
 .skill img{
   width:40px;
   height:40px;
   object-fit:contain;
-}
-
-.skill:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 20px rgba(225,6,0,.4);
-}
-
-/* ================= BUTTON ================= */
-
-.cv-btn{
-  margin-top:20px;
-  display:inline-block;
-  padding:12px 26px;
-  background:var(--red);
-  color:#fff;
-  text-decoration:none;
-  border-radius:8px;
-  font-weight:600;
-}
-
-.cv-btn:hover{
-  background:#fff;
-  color:#000;
 }
 
 /* ================= SHOWREEL ================= */
@@ -165,7 +147,7 @@ h1{
   aspect-ratio:16/9;
   border-radius:20px;
   overflow:hidden;
-  border:2px solid var(--red);
+  border:2px solid #fff;
 }
 
 .video-wrapper iframe{
@@ -185,12 +167,16 @@ h1{
   text-align:center;
 }
 
-.poster{
-  grid-template-columns:1fr;
+.header h1{
+  order:-2;
 }
 
-.skills-grid{
-  justify-content:center;
+.profile{
+  order:-1;
+}
+
+.poster{
+  grid-template-columns:1fr;
 }
 
 }
@@ -205,10 +191,6 @@ h1{
 <!-- ================= HEADER ================= -->
 
 <div class="header">
-
-  <div class="profile">
-    <img src="DP.jpg" alt="Saran Selvakumar">
-  </div>
 
   <div>
     <h1>Saran Selvakumar</h1>
@@ -225,22 +207,25 @@ h1{
     </p>
 
     <a href="cv.pdf" class="cv-btn" download>Download CV</a>
+  </div>
 
+  <div class="profile">
+    <img src="DP.jpg" alt="Saran Selvakumar">
   </div>
 
 </div>
 
-<!-- ================= POSTER CONTENT ================= -->
+<!-- ================= CONTENT GRID ================= -->
 
 <div class="poster">
 
-<!-- LEFT COLUMN -->
+<!-- LEFT -->
 <div class="left-column">
 
   <div class="block">
     <div class="section-title">About Me</div>
     <p>
-      Passionate VFX compositor focused on seamless visual integration,
+      Passionate VFX compositor focused on seamless integration,
       cleanup workflows and high-quality compositing pipelines.
     </p>
   </div>
@@ -253,18 +238,9 @@ h1{
     </p>
   </div>
 
-  <div class="block">
-    <div class="section-title">AI Tools</div>
-    <p>
-      ChatGPT<br>
-      Adobe Firefly<br>
-      Midjourney
-    </p>
-  </div>
-
 </div>
 
-<!-- RIGHT COLUMN -->
+<!-- RIGHT -->
 <div class="right-column">
 
   <div class="block">
@@ -286,7 +262,6 @@ h1{
       Compositing<br>
       Roto<br>
       RotoPaint<br>
-      Color Matching<br>
       Cleanup<br>
       Matchmove
     </p>
