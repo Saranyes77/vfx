@@ -13,20 +13,32 @@
 /* ================= COLORS ================= */
 
 :root{
-  --black:#000;
-  --white:#fff;
-  --red:#e10600;
-  --gray:#cfcfcf;
+  --bg-main:#0a0a0a;     /* main background */
+  --bg-card:#111111;     /* card background */
+  --bg-soft:#161616;     /* hover depth */
+
+  --white:#f5f5f5;
+  --gray:#b8b8b8;
+
+  --red:#ff2a1f;         /* cinematic red */
+  --red-soft:#ff2a1f22;  /* glow effect */
 }
 
 /* ================= GLOBAL ================= */
 
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   font-family:'Poppins', sans-serif;
-  background:var(--black);
+  background:var(--bg-main);
   color:var(--white);
+  line-height:1.6;
 }
+
+/* CENTER CONTAINER */
 
 .container{
   max-width:1200px;
@@ -34,7 +46,7 @@ body{
   padding:80px 40px;
 }
 
-/* ================= HEADER CARD ================= */
+/* ================= HEADER ================= */
 
 .header{
   display:grid;
@@ -47,32 +59,46 @@ body{
 .profile img{
   width:100%;
   border-radius:25px;
+  border:2px solid var(--red-soft);
 }
+
+/* NAME */
 
 h1{
   font-size:64px;
   margin:0;
   font-weight:800;
+  letter-spacing:1px;
 }
 
+/* ROLE */
+
 .role{
+  font-size: 20px;
   margin-top:10px;
   color:var(--red);
   font-weight:600;
+  letter-spacing:.5px;
 }
+
+/* INTRO TEXT */
 
 .intro{
   margin-top:20px;
   color:var(--gray);
-  line-height:1.8;
+  line-height:1.9;
+  max-width:700px;
 }
 
 /* ================= POSTER GRID ================= */
 
 .poster{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  gap:clamp(20px, 4vw, 60px);
+
+  /* ⭐ ADD THIS */
+  grid-auto-rows:1fr;
 }
 
 /* COLUMN STRUCTURE */
@@ -84,21 +110,37 @@ h1{
   gap:60px;
 }
 
-/* BLOCK STYLE */
+/* ================= BLOCK STYLE ================= */
 
 .block{
-  background:#0b0b0b;
-  border:2px solid var(--red);
+  background:var(--bg-card);
+  border:2px solid var(--red-soft);
   border-radius:18px;
-  padding:30px;
+  padding:32px;
+  transition:.35s ease;
+
+  /* ⭐ ADD THESE (fix alignment) */
+  height:100%;
+  display:flex;
+  flex-direction:column;
 }
 
-/* TITLES */
+/* subtle cinematic hover */
+
+.block:hover{
+  transform:translateY(-6px);
+  border-color:var(--red);
+  box-shadow:0 20px 40px rgba(255,42,31,.15);
+  background:var(--bg-soft);
+}
+
+/* ================= TITLES ================= */
 
 .section-title{
-  font-size:28px;
+  font-size:40px;
   font-weight:800;
-  margin-bottom:20px;
+  margin-bottom:22px;
+  letter-spacing:.5px;
 }
 
 /* ================= SKILLS GRID ================= */
@@ -106,54 +148,59 @@ h1{
 .skills-grid{
   display:grid;
   grid-template-columns:repeat(3,70px);
-  gap:15px;
+  gap:18px;
 }
 
 .skill{
   width:70px;
   height:70px;
-  background:#fff;
-  border:2px solid var(--red);
+  background:#1b1b1b;
+  border:2px solid var(--red-soft);
   border-radius:12px;
   display:flex;
   align-items:center;
   justify-content:center;
-  transition:.3s;
+  transition:.35s ease;
 }
 
 .skill img{
   width:40px;
   height:40px;
   object-fit:contain;
+  filter:brightness(.95);
 }
 
 .skill:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 20px rgba(225,6,0,.4);
+  transform:translateY(-8px) scale(1.05);
+  border-color:var(--red);
+  box-shadow:0 12px 25px rgba(255,42,31,.35);
+  background:#202020;
 }
 
 /* ================= BUTTON ================= */
 
 .cv-btn{
-  margin-top:20px;
+  margin-top:22px;
   display:inline-block;
-  padding:12px 26px;
+  padding:13px 28px;
   background:var(--red);
   color:#fff;
   text-decoration:none;
   border-radius:8px;
   font-weight:600;
+  transition:.3s;
 }
 
 .cv-btn:hover{
   background:#fff;
   color:#000;
+  transform:translateY(-2px);
 }
 
 /* ================= SHOWREEL ================= */
 
 .video-section{
-  margin-top:100px;
+  margin-top:120px;
   text-align:center;
 }
 
@@ -165,7 +212,13 @@ h1{
   aspect-ratio:16/9;
   border-radius:20px;
   overflow:hidden;
-  border:2px solid var(--red);
+  border:2px solid var(--red-soft);
+  transition:.3s;
+}
+
+.video-wrapper:hover{
+  border-color:var(--red);
+  box-shadow:0 25px 50px rgba(255,42,31,.18);
 }
 
 .video-wrapper iframe{
@@ -180,21 +233,24 @@ h1{
 
 @media(max-width:900px){
 
-.header{
-  grid-template-columns:1fr;
-  text-align:center;
-}
+  .header{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
 
-.poster{
-  grid-template-columns:1fr;
-}
+  h1{
+    font-size:44px;
+  }
 
-.skills-grid{
-  justify-content:center;
-}
+  .poster{
+    grid-template-columns:1fr;
+  }
+
+  .skills-grid{
+    justify-content:center;
+  }
 
 }
-
 </style>
 </head>
 
@@ -217,12 +273,11 @@ h1{
       VFX Compositing | Roto | RotoPaint
     </div>
 
-    <p class="intro">
-      I am a VFX artist specializing in compositing, roto and roto paint workflows.
-      My work focuses on integrating CGI with live-action footage while maintaining
-      photorealistic consistency through clean mattes, edge refinement and accurate
-      color matching to achieve cinematic production quality.
-    </p>
+<ul class="intro-list">
+  <li>Fresher VFX artist focused on Compositing workflows</li>
+  <li>Skilled in Roto and Roto Paint techniques</li>
+  <li>Passionate about creating clean and seamless visual shots</li>
+</ul>
 
     <a href="cv.pdf" class="cv-btn" download>Download CV</a>
 
